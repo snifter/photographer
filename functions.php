@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Twenty Fifteen functions and definitions
@@ -83,7 +84,7 @@ function twentyfifteen_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu',      'twentyfifteen' ),
-		'social'  => __( 'Social Links Menu', 'twentyfifteen' ),
+		//'social'  => __( 'Social Links Menu', 'twentyfifteen' ),
 	) );
 
 	/*
@@ -154,37 +155,39 @@ function twentyfifteen_fonts_url() {
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 
+    $fonts[] = 'Ubuntu:400,400italic';
+  
 	/*
 	 * Translators: If there are characters in your language that are not supported
 	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
 		$fonts[] = 'Noto Sans:400italic,700italic,400,700';
-	}
+	}*/
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
 	 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
 		$fonts[] = 'Noto Serif:400italic,700italic,400,700';
-	}
+	}*/
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
 	 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentyfifteen' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentyfifteen' ) ) {
 		$fonts[] = 'Inconsolata:400,700';
-	}
+	}*/
 
 	/*
 	 * Translators: To add an additional character subset specific to your language,
 	 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
 	 */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'twentyfifteen' );
+	//$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'twentyfifteen' );
 
-	if ( 'cyrillic' == $subset ) {
+	/*if ( 'cyrillic' == $subset ) {
 		$subsets .= ',cyrillic,cyrillic-ext';
 	} elseif ( 'greek' == $subset ) {
 		$subsets .= ',greek,greek-ext';
@@ -192,7 +195,7 @@ function twentyfifteen_fonts_url() {
 		$subsets .= ',devanagari';
 	} elseif ( 'vietnamese' == $subset ) {
 		$subsets .= ',vietnamese';
-	}
+	}*/
 
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
@@ -212,10 +215,10 @@ endif;
  *
  * @since Twenty Fifteen 1.1
  */
-function twentyfifteen_javascript_detection() {
+/*function twentyfifteen_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );
+add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );*/
 
 /**
  * Enqueue scripts and styles.
@@ -227,22 +230,24 @@ function twentyfifteen_scripts() {
 	wp_enqueue_style( 'twentyfifteen-fonts', twentyfifteen_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
+	//wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'twentyfifteen-style', get_stylesheet_uri() );
 
 	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'twentyfifteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfifteen-style' ), '20141010' );
-	wp_style_add_data( 'twentyfifteen-ie', 'conditional', 'lt IE 9' );
+	//wp_enqueue_style( 'twentyfifteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfifteen-style' ), '20141010' );
+	//wp_style_add_data( 'twentyfifteen-ie', 'conditional', 'lt IE 9' );
 
 	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'twentyfifteen-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'twentyfifteen-style' ), '20141010' );
-	wp_style_add_data( 'twentyfifteen-ie7', 'conditional', 'lt IE 8' );
+	//wp_enqueue_style( 'twentyfifteen-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'twentyfifteen-style' ), '20141010' );
+	//wp_style_add_data( 'twentyfifteen-ie7', 'conditional', 'lt IE 8' );
 
-	wp_enqueue_script( 'twentyfifteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20141010', true );
+	//wp_enqueue_script( 'twentyfifteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20141010', true );
+  
+    wp_enqueue_script( 'photographer-menu-toggle', get_template_directory_uri() . '/js/photographer-menu-toggle.js', array( 'jquery' ), '20141010', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	/*if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
@@ -254,7 +259,7 @@ function twentyfifteen_scripts() {
 	wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
-	) );
+	) );*/
 }
 add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 
