@@ -10,10 +10,30 @@
  */
 ?>
 
+<?php 
+if ( ! is_single() ):
+  $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+  $url = $thumb['0'];
+?>
+<div class="post-thumbnail-wrapper">
+  <div class="post-thumbnail-box<?php if ( ! $url ): echo ( ' no-thumbnail' ); endif; ?>"<?php if ( $url ): echo ( ' style="background-image: url('.$url.');"' ); endif; ?> >
+    <a href="<?php echo( esc_url( get_permalink() ) ); ?>" rel="bookmark">
+      <div class="entry-title">
+        <h3><?php echo ( get_the_date() ); ?></h3>
+        <?php the_title( '<h1>', '</h1>' ); ?>
+      </div>
+    </a>    
+  </div>
+</div>
+<?php
+endif;
+?>
+
+<?php if ( is_single() ): ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.
-		twentyfifteen_post_thumbnail();
+		//twentyfifteen_post_thumbnail();
 	?>
 
 	<header class="entry-header">
@@ -58,3 +78,4 @@
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
+<?php endif; ?>
