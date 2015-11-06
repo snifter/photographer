@@ -134,6 +134,17 @@ a {
     }
   }
   
+  .main-navigation {
+    padding: 20px;
+    text-transform: uppercase;
+  }
+  
+  .current-menu-item, .current-cat {
+    a {
+      color: #fff;
+    }
+  }
+  
   .widget-title {
     text-transform: uppercase;
     color: #ccc;
@@ -146,6 +157,10 @@ a {
     list-style: outside none none;
     padding: 0;
     margin: 0;
+    
+    &.children {
+      padding-left: 20px;
+    }
   }
   
   a {
@@ -153,6 +168,48 @@ a {
     
     &:hover {
       color: #fff;
+    }
+  }
+}
+
+@submit_bg_color: #DE7D0D;
+.search-form {
+  padding-bottom: 50px;
+  
+  span.screen-reader-text {
+    display: none;
+  }
+  
+  input[type="search"] {
+    float: left;
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+    font-size: 12px;
+    background: #444;
+    color: #fff;
+    border: medium none;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    float: right;
+    width: 30%;
+    height: 30px;
+    padding: 0 10px;
+    background: @submit_bg_color;
+    border: medium none;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+    transition: all 0.2s ease-in-out 0s;
+    
+    &:hover {
+      background: darken(@submit_bg_color, 10%);
+    }
+    
+    &:active {
+      background: darken(@submit_bg_color, 5%);
     }
   }
 }

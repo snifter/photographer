@@ -440,6 +440,14 @@ a {
   margin-bottom: 5px;
   font-size: 0.8em;
 }
+.sidebar-content .main-navigation {
+  padding: 20px;
+  text-transform: uppercase;
+}
+.sidebar-content .current-menu-item a,
+.sidebar-content .current-cat a {
+  color: #fff;
+}
 .sidebar-content .widget-title {
   text-transform: uppercase;
   color: #ccc;
@@ -452,11 +460,49 @@ a {
   padding: 0;
   margin: 0;
 }
+.sidebar-content ul.children {
+  padding-left: 20px;
+}
 .sidebar-content a {
   color: #999;
 }
 .sidebar-content a:hover {
   color: #fff;
+}
+.search-form {
+  padding-bottom: 50px;
+}
+.search-form span.screen-reader-text {
+  display: none;
+}
+.search-form input[type="search"] {
+  float: left;
+  width: 70%;
+  height: 30px;
+  padding: 5px;
+  font-size: 12px;
+  background: #444;
+  color: #fff;
+  border: medium none;
+  box-sizing: border-box;
+}
+.search-form input[type="submit"] {
+  float: right;
+  width: 30%;
+  height: 30px;
+  padding: 0 10px;
+  background: #DE7D0D;
+  border: medium none;
+  text-align: center;
+  color: #fff;
+  font-size: 11px;
+  transition: all 0.2s ease-in-out 0s;
+}
+.search-form input[type="submit"]:hover {
+  background: #ae620a;
+}
+.search-form input[type="submit"]:active {
+  background: #c66f0c;
 }
 .content-wrapper {
   position: relative;
