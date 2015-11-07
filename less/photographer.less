@@ -254,6 +254,14 @@ a {
   float: left;
   width: 33.33333%;
   padding: 5px;
+  
+  @media(max-width: 991px) {
+    width: 50%;
+  }
+  
+  @media(max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .post-thumbnail-box {
@@ -264,8 +272,25 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   
+  @media(min-width: 1281px) {
+    height: 500px;
+  }
+  
+  @media(max-width: 360px) {
+    height: 350px;
+  }
+  
   &.no-thumbnail {
-    background: #444;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#444444+0,ffffff+100&amp;1+0,0+100 */
+  background: -moz-linear-gradient(top,  rgba(68,68,68,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(68,68,68,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(68,68,68,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(68,68,68,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(68,68,68,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(68,68,68,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+    //background: #444;
     opacity: .7;
   }
   
