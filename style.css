@@ -619,3 +619,30 @@ a {
 .navigation.pagination {
   clear: both;
 }
+.post .entry-header {
+  padding-top: 2em;
+}
+.post .entry-header h1 {
+  margin-top: 0;
+}
+.post .entry-header .cat-links,
+.post .entry-header .tags-links {
+  font-size: .8em;
+  line-height: 1em;
+  margin: 10px 0;
+  display: block;
+  text-align: right;
+}
+figure {
+  margin: 1em auto;
+}
+figure img {
+  background: #000;
+  padding: 1px;
+}
+figcaption {
+  text-align: center;
+  margin: 0 0 4em;
+  font-size: .8em;
+  line-height: 1em;
+}
