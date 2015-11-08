@@ -338,6 +338,10 @@ body {
 a {
   text-decoration: none;
   transition: all 0.2s ease-in-out 0s;
+  color: #DE7D0D;
+}
+a:hover {
+  color: #7e4707;
 }
 .header {
   padding: 10px 20px;
@@ -632,6 +636,13 @@ a {
   margin: 10px 0;
   display: block;
   text-align: right;
+}
+.page .alignleft {
+  float: left;
+}
+.page img {
+  background: #000;
+  padding: 1px;
 }
 figure {
   margin: 1em auto;
