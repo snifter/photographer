@@ -100,9 +100,9 @@ function twentyfifteen_setup() {
 	 *
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
+	/*add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
-	) );
+	) );*/
 
 	$color_scheme  = twentyfifteen_get_color_scheme();
 	$default_color = trim( $color_scheme[0], '#' );
@@ -270,7 +270,7 @@ add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
  *
  * @see wp_add_inline_style()
  */
-function twentyfifteen_post_nav_background() {
+/*function twentyfifteen_post_nav_background() {
 	if ( ! is_single() ) {
 		return;
 	}
@@ -303,7 +303,7 @@ function twentyfifteen_post_nav_background() {
 
 	wp_add_inline_style( 'twentyfifteen-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'twentyfifteen_post_nav_background' );
+add_action( 'wp_enqueue_scripts', 'twentyfifteen_post_nav_background' );*/
 
 /**
  * Display descriptions in main navigation.

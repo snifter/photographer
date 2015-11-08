@@ -623,6 +623,19 @@ a:hover {
 .navigation.pagination {
   clear: both;
 }
+.post-navigation {
+  padding-bottom: 4em;
+}
+.post-navigation h2,
+.post-navigation .meta-nav {
+  display: none;
+}
+.post-navigation .nav-previous {
+  float: left;
+}
+.post-navigation .nav-next {
+  float: right;
+}
 .post .entry-header {
   padding-top: 2em;
 }
