@@ -635,13 +635,17 @@ a {
 }
 figure {
   margin: 1em auto;
+  text-align: center;
+  width: 100% !important;
 }
 figure img {
   background: #000;
   padding: 1px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 figcaption {
-  text-align: center;
   margin: 0 0 4em;
   font-size: .8em;
   line-height: 1em;
