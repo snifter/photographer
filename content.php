@@ -37,13 +37,13 @@ endif;
 	?>
 
 	<header class="entry-header">
-      <h3><?php echo( get_the_date() ); ?></h3>
-		<?php
-			the_title( '<h1 class="entry-title">', '</h1>' );
-            the_excerpt();
-            $categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            <p class="entry-meta"><?php 
+              echo( get_the_date() ); 
+              
+              $categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
             if ( $categories_list && twentyfifteen_categorized_blog() ) {
-                printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+                printf( ' - <span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
                     _x( 'Categories', 'Used before category names.', 'twentyfifteen' ),
                     $categories_list
                 );
@@ -51,11 +51,15 @@ endif;
 
             $tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
             if ( $tags_list ) {
-                printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+                printf( ' - <span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
                     _x( 'Tags', 'Used before tag names.', 'twentyfifteen' ),
                     $tags_list
                 );
             }
+              ?></p>
+          
+        <?php
+            the_excerpt();            
 		?>      
 	</header><!-- .entry-header -->
 
